@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Create Driver Price";
+}
+@model RentCar.Models.DriverPrice
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Create Driver Price</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("Create", "DriverPrice", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <div class="card-body">
+
+                    <div class="form-group">
+                        @Html.LabelFor(Model => Model.loaiXe)
+                        @Html.EditorFor(Model => Model.loaiXe, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập loại xe" } })
+                        @Html.ValidationMessageFor(Model => Model.loaiXe, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(Model => Model.giaTheoGio)
+                        @Html.EditorFor(Model => Model.giaTheoGio, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập giá theo giờ" } })
+                        @Html.ValidationMessageFor(Model => Model.giaTheoGio, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(Model => Model.giaTheoNgay)
+                        @Html.EditorFor(Model => Model.giaTheoNgay, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập giá theo ngày" } })
+                        @Html.ValidationMessageFor(Model => Model.giaTheoNgay, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(Model => Model.giaTheoLoTrinh)
+                        @Html.EditorFor(Model => Model.giaTheoLoTrinh, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập giá theo lộ trình" } })
+                        @Html.ValidationMessageFor(Model => Model.giaTheoLoTrinh, "", new { @class = "text-danger" })
+                    </div>
+
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+

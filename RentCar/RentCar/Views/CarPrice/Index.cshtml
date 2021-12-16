@@ -1,0 +1,76 @@
+﻿@model List<RentCar.Models.CarPrice>
+@{
+    ViewBag.Title = "Car Price";
+   
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Car Price</h3>
+
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Loại xe</th>
+                            <th>Số ghế</th>
+                            <th>Giá theo giờ</th>
+                            <th>Giá theo ngày</th>
+                            <th>Giá theo lộ trình</th>
+                            <th>Ngày đăng</th>
+                            <th>Ngày sửa</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var car in Model)
+                        {
+                            <tr>
+                                <td>@car.Id</td>
+                                <td>@car.loaiXe</td>
+                                <td>@car.soGhe</td>
+                                <td>@car.giaTheoGio</td>
+                                <td>@car.giaTheoNgay</td>
+                                <td>@car.giaTheoLoTrinh</td>
+                                <td>@car.ngayDang</td>
+                                <td>@car.ngaySua</td>
+                                <td>
+                                    <a href="~/CarPrice/Edit/@car.Id">Edit</a>
+                                    <a onclick="return confirm('Are you sure?');" href="~/CarPrice/Delete/@car.Id" class="text-danger">Delete</a>
+                                </td>
+
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+
+
+
+
+
+
