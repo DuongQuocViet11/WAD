@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Update Category";
 }
+@model T2010A_WAD.Models.Category
 
 <div class="row">
     <!-- left column -->
@@ -13,28 +14,22 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken() //cho 1 token vao form
+                @Html.ValidationSummary(true) // xac dinh se validate form data
                 <div class="card-body">
                     <div class="form-group">
-                        <label>Category ID</label>
-                        <input type="text" class="form-control" placeholder="Enter category id you want to update">
-                    </div>
-                    <div class="form-group">
-                        <label>Category Name</label>
-                        <input type="text" class="form-control" placeholder="Enter new category name">
+                        @Html.LabelFor(Model => Model.CategoryName)
+                        @Html.EditorFor(Model => Model.CategoryName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter category name" } })
+                        @Html.ValidationMessageFor(Model => Model.CategoryName, "", new { @class = "text-danger" })
+
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputFile">Image</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" name="Image" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
-                            </div>
-                        </div>
+                        @Html.LabelFor(Model => Model.CategoryImage)
+                        @Html.EditorFor(Model => Model.CategoryImage, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter category image" } })
+                        @Html.ValidationMessageFor(Model => Model.CategoryImage, "", new { @class = "text-danger" })
                     </div>
 
                 </div>
@@ -43,8 +38,8 @@
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-            </form>
+            }
+
         </div>
     </div>
 </div>
-

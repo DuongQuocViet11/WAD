@@ -77,3 +77,7 @@ E:\WAD\T2010A_WAD\T2010A_WAD\obj\Debug\T2010A_WAD.csproj.CoreCompileInputs.cache
 E:\WAD\T2010A_WAD\T2010A_WAD\obj\Debug\T2010A_WAD.csproj.CopyComplete
 E:\WAD\T2010A_WAD\T2010A_WAD\obj\Debug\T2010A_WAD.dll
 E:\WAD\T2010A_WAD\T2010A_WAD\obj\Debug\T2010A_WAD.pdb
+E:\WAD\T2010A_WAD\T2010A_WAD\bin\EntityFramework.dll
+E:\WAD\T2010A_WAD\T2010A_WAD\bin\EntityFramework.SqlServer.dll
+E:\WAD\T2010A_WAD\T2010A_WAD\bin\EntityFramework.xml
+E:\WAD\T2010A_WAD\T2010A_WAD\bin\EntityFramework.SqlServer.xml
