@@ -1,0 +1,62 @@
+﻿@model List<Practice.Models.Contact>
+@{
+    ViewBag.Title = "Contact";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Contact</h3>
+
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Contact Name</th>
+                            <th>Contact Number</th>
+                            <th>Group Name</th>
+                            <th>Hire date</th>
+                            <th>Birthday</th>   
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var con in Model)
+                        {
+                            <tr>
+                                <td>@con.id</td>
+                                <td>@con.ContactName</td>
+                                <td>@con.ContactNumber</td>
+                                <td>@con.GroupName</td>
+                                <td>@con.HireDate</td>
+                                <td>@con.Birthday</td>
+                                <td>
+                                    <a href="~/Contact/Update/@con.id">Edit</a>
+                                    <a onclick="return confirm('Are you sure?');" href="~/Contact/Delete/@con.id" class="text-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
